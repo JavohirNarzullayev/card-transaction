@@ -20,6 +20,7 @@ public class Transaction {
     private BigDecimal amount;
     private BigDecimal remaining;
     private String type; // DEPOSIT, WITHDRAW
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
     // Getters and Setters
 }

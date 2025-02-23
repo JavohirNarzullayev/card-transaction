@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - card_trx_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=card_trx
+      - POSTGRES_USER=card_trx_user
+      - POSTGRES_PASSWORD=zruQQNDVrxJvvo
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U card_trx_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/card_trx
+      - SPRING_DATASOURCE_USERNAME=card_trx_user
+      - SPRING_DATASOURCE_PASSWORD=zruQQNDVrxJvvo
+
+volumes:
+  card_trx_data:
+    driver: local
