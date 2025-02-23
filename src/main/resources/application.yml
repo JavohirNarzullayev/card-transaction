@@ -1,6 +1,11 @@
 spring:
   application:
     name: CARD-TRX
+  mvc:
+    format:
+      date: yyyy-MM-dd
+      date-time: yyyy-MM-dd HH:mm:ss
+      time: HH:mm:ss
   datasource:
     url: jdbc:postgresql://localhost:5432/card_trx
     username: card_trx_user

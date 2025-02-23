@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import uz.narzullaev.cardtrx.domain.UserService;
+import uz.narzullaev.cardtrx.service.UserService;
 import uz.narzullaev.cardtrx.dto.BaseResponse;
 import uz.narzullaev.cardtrx.dto.user.UserResDto;
 import uz.narzullaev.cardtrx.dto.user.UserRqDto;

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Builder
 public record UserResDto(
-        Long id,
+        long id,
         String name,
         BigDecimal balance
 ) {

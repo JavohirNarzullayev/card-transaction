@@ -1,4 +1,4 @@
-package uz.narzullaev.cardtrx.domain;
+package uz.narzullaev.cardtrx.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +16,10 @@ public class UserService {
     public User save(UserRqDto dto) {
         var user = UserMapper.toEntity(dto);
         return userRepository.save(user);
+    }
+
+    public User saveAndFlush(User user) {
+        return userRepository.saveAndFlush(user);
     }
 
     public User updateUser(Long id, UserRqDto dto) {
