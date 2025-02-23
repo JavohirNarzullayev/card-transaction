@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: CARD-TRX
+  datasource:
+    url: jdbc:postgresql://localhost/card_trx
+    username: card_trx_user
+    password: zruQQNDVrxJv
+    driverClassName: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: Hikari
+      auto-commit: false
+      connection-test-query: SELECT 1
+      idle-timeout: 120000
+      minimum-idle: 10
+      maximum-pool-size: 30
+      connection-timeout: 300
+      max-lifetime: 9000
+      validation-timeout: 2000
+      leak-detection-threshold: 5000
+  threads:
+    virtual:
+      enabled: true
+
+server:
+  port: ${SERVER_PORT:5000}
+
+
+#Actuator
+management:
+  endpoints:
+    web:
+      base-path: /management
+      exposure:
+        include: ['health']
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  swagger-ui:
+    path: /index.html
+  api-docs:
+    path: /v3/api-docs

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - card_trx_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=card_trx
+      - POSTGRES_USER=card_trx_user
+      - POSTGRES_PASSWORD=zruQQNDVrxJv
+
+volumes:
+  card_trx_data:
+    driver: local
