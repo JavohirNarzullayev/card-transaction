@@ -7,9 +7,9 @@ spring:
       date-time: yyyy-MM-dd HH:mm:ss
       time: HH:mm:ss
   datasource:
-    url: jdbc:postgresql://localhost:5432/card_trx
-    username: card_trx_user
-    password: zruQQNDVrxJv
+    url: jdbc:postgresql://localhost:5432/cardtrx
+    username: cardtrxuser
+    password: zruQQNDVrxJvvo
     driverClassName: org.postgresql.Driver
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
@@ -43,7 +43,7 @@ spring:
         format_sql: true
     show-sql: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     database-platform: org.hibernate.dialect.PostgreSQL95Dialect
     generate-ddl: true
   threads:
