@@ -1,9 +1,9 @@
-INSERT INTO public.users (id, balance, created_at, name)
+INSERT INTO public.users (id, balance, created_at, name,version)
 VALUES
-    (1, 10000.00, '2025-02-24 09:24:23.354777', 'Javohir'),
-    (2, 20000.00, '2025-02-24 09:24:31.801131', 'Shohruh'),
-    (3, 30000.00, '2025-02-24 09:24:40.261280', 'Olmos'),
-    (4, 40000.00, '2025-02-24 09:24:53.040888', 'Evgeniy')
+    (1, 10000.00, '2025-02-24 09:24:23.354777', 'Javohir',0),
+    (2, 20000.00, '2025-02-24 09:24:31.801131', 'Shohruh',0),
+    (3, 30000.00, '2025-02-24 09:24:40.261280', 'Olmos',0),
+    (4, 40000.00, '2025-02-24 09:24:53.040888', 'Evgeniy',0)
     ON CONFLICT (id)
 DO UPDATE SET
     balance = EXCLUDED.balance,

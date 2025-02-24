@@ -18,4 +18,6 @@ public class User {
     private String name;
     private BigDecimal balance = BigDecimal.ZERO;
     private LocalDateTime createdAt = LocalDateTime.now();
+    @Version
+    private Long version;
 }
